@@ -1,0 +1,36 @@
+<ul id="gnb">
+   
+</ul>
+
+<script src="./forArray.js"></script>
+<script>
+  const ultag = document.getElementById("gnb"); //변수저장, 속도빨라짐
+  var litages = ""; // li태그들을 모아둘 변수를 일단 선언 ,변수 var는 let이나 const보다 유연
+//   ultag.innerHTML = "<li>1</li>";
+//   ultag.innerHTML += "<li>1</li>";
+//   ultag.innerHTML += "<li>1</li>";
+//   ultag.innerHTML += "<li>1</li>";
+
+//   for(var i=0; i<4; i++){
+//     ultag.innerHTML = "<li>1</li>";
+//   }
+
+//   ultag.innerHTML = "";
+//    for(var i=0; i<4; i++){
+//        litages += "<li>1</li>";
+//    }
+for(var x in util){  //반드시 forin문 array 변수를 꼭 사용한다.
+    litages +=`<li class="${util[x].cls}">
+        <a href="${util[x].href}" target="${util[x].target}">
+            ${util[x].text}</a>
+        </li>` // li태그들을 모두 모아저장하기 
+}
+
+//    for(var i in util){
+//     litages += `<li class="${util[i].cls}">
+//              <a href="${util[i].href}" target="${util[i].target}"
+//                 ${util[i].text}</a>
+//             </li>`    
+// }
+  ultag.innerHTML = litages; 
+</script>

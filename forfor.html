@@ -1,0 +1,29 @@
+<!-- <ul id="gugudan">
+    2단출력하려면 for문 써야겠다
+</ul>
+<script>
+    var gugudan = document.getElementById("gugudan");
+    var gugu = "";
+    var dan = 2;
+    for(var i=1; i<10; i++){
+        gugu += `<li>${dan}X${i}=${i*2}</li>`
+    }
+    gugudan.innerHTML = gugu;
+</script> -->
+
+<div id="gugudan">  
+    여러개의 단들을 출력하려면 for안의 for문 써야겠다
+</div>
+<script>
+    var gugudan = document.getElementById("gugudan");
+    var gugu = "";
+    
+    for(var x =2; x <10; x++ ){
+        gugu +="<ul>";
+        for(var i =1; i<10; i++){
+            gugu += `<li>${x}X${i}=${i*x}</li>`
+        }
+        gugu +="</ul>"
+    }
+    gugudan.innerHTML = gugu;
+</script>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네비게이션만들기</title>
+    <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <style>
+        @font-face {
+    font-family: 'GangwonState';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/GangwonState.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    }
+   
+    body{
+        font-family: 'GangwonState';
+    }
+    a{
+        text-decoration: none; color:#222; 
+    }
+    .container{max-width: 1280px; margin: 0 auto;}
+    .d-flex{ display: flex;}
+    #hd{
+        border-bottom: 1px solid #222;
+        padding: 15px 0;
+    }
+    #hd a{
+        margin: 0 1rem;
+    }
+    </style>
+</head>
+<body>
+
+    <header id="hd">
+        <div class="container d-flex">
+            <ul id="util" class="d-flex"></ul>
+        </div>
+    </header>
+
+    <script>
+    const util =[
+    {
+        text :"Git",
+        href : "http://gitthub.com",
+        cls : "bi bi-github",
+        target : "_blank",
+        d2:[]
+    },
+    {
+        text :"Notion",
+        href : "http://notion.io",
+        cls : "",
+        target : "_blank",
+        d2:[]
+    },
+    {
+        text :"Youtube",
+        href : "http://youtube.com",
+        cls : "bi bi-youtube",
+        target : "_blank",
+        d2:[]
+    },
+    {
+        text :"language",
+        href : "#none",
+        cls : "bi bi-globe",
+        target : "",
+        d2:[
+            {
+                text:"EN",
+                href:"en.com"
+            },
+            {
+                text:"JP",
+                href:"jp.com"
+            }
+        ]
+
+    }
+]
+    const utiltag = document.getElementById("util"); //메뉴를 삽입할 객체를 저장해둔다.
+    var utilmenu ="";  //메뉴안에 저장할 변수선언
+    for(v in util){
+        utilmenu +=`<li><a href=${util[v].href}>`;
+             if(util[v].cls !==''){
+                utilmenu +=`<i class="${util[v].cls}"></i>`;
+             }else{
+                utilmenu +=`${util[v].text}`;
+             }                      
+                       
+                                               
+        utilmenu +=`</a></li>`; //데이터를 모으는 작업
+    }
+   
+    utiltag.innerHTML = utilmenu;    //  출력!!! 이줄만 없애면 출력되지 않는다
+</script>
+</body>
+</html>

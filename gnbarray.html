@@ -1,0 +1,63 @@
+<div id="gugudan">  
+    여러개의 단들을 출력하려면 for안의 for문 써야겠다
+</div>
+<script>
+const util =[
+    {
+        text :"Git",
+        href : "http://gitthub.com",
+        cls : "",
+        target : "_blank",
+        d2:[]
+    },
+    {
+        text :"Notion",
+        href : "http://notion.io",
+        cls : "",
+        target : "_blank",
+        d2:[]
+    },
+    {
+        text :"Youtube",
+        href : "http://youtube.com",
+        cls : "",
+        target : "_blank",
+        d2:[]
+    },
+    {
+        text :"language",
+        href : "#none",
+        cls : "",
+        target : "",
+        d2:[
+            {
+                text:"EN",
+                href:"en.com"
+            },
+            {
+                text:"JP",
+                href:"jp.com"
+            }
+        ]
+
+    }
+]
+
+
+    var gugudan = document.getElementById("gugudan");
+    var gugu = "";
+    
+    gugu +="<ul id='navi'>"
+    for(var x in util){
+        gugu +=`<li>
+                <a herf="">대메뉴들</a>
+                <ul class='d2'>`;
+             for(var i =0; i<3; i++){
+             gugu += `<li>소메뉴들</li>`
+             }
+        gugu +="</ul>";
+        gugu +="</li>"
+    }
+    gugu +="</ul>";
+    gugudan.innerHTML = gugu;
+</script>
